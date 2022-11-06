@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ msg }}</h2>
+
+
+<div class="services-container">
+    <div class="services-title-done">
+        <h3>Wykonane:</h3>
+    </div>
+
+    {% for result in results_done %}
+
+        <div class="services-result"
+            {% if result.is_approved == True %}
+                 id='approved'
+            {% else %}
+                 id="not-approved"
+            {% endif %}>
+
+            {% if result.is_approved != True %}
+                <div class="button-approved">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-approved" id={{ result.id }} name="btn-appr"
+                                            value={{ result.id }} onclick=changeValue();>Zatwierdź</button>
+                    </form>
+                </div>
+
+            {% endif %}
+
+            <div class="service-date">
+                <h4>Termin: {{ result.date_start|date:"d M Y" }} - {{ result.date_end|date:"d M Y" }}</h4>
+            </div>
+             <div class="service-person">
+                <h4>Właściciel: {{ result.owner }} </h4>
+            </div>
+             <div class="service-animal">
+                <h4>Zwierzak: {{ result.animal }} </h4>
+                <h4>Wielkość: {{ result.size }} </h4>
+            </div>
+            <div class="service-details">
+                <h5>{{ result.message }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="services-title-ordered">
+        <h3>Zamówione:</h3>
+    </div>
+
+    {% for result in results_ordered %}
+
+        <div class="services-result"
+        {% if result.is_approved == True %}
+             id='approved'
+        {% else %}
+             id="not-approved"
+        {% endif %}>
+
+            <div class="service-date">
+                <h4>Termin: {{ result.date_start|date:"d M Y" }} - {{ result.date_end|date:"d M Y" }}</h4>
+            </div>
+             <div class="service-person">
+                <h4>Petsitter: {{ result.pet_sitter }} </h4>
+            </div>
+             <div class="service-animal">
+                <h4>Zwierzak: {{ result.animal }} </h4>
+                <h4>Wielkość: {{ result.size }} </h4>
+            </div>
+            <div class="service-details">
+                <h5>{{ result.message }}</h5>
+            </div>
+
+            {% if result.is_approved == True %}
+                <div class="person-buttons">
+                    <a href="{% url 'feedback-form' %}">
+                        <button class="feedback" id="{{ result.pet_sitter }}"><span>Oceń</span></button>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+<script>
+    btn_approved = document.querySelectorAll(".btn-approved")
+    console.log(btn_approved);
+
+    for (btn of btn_approved) {
+        function changeValue() {
+            console.log('działa')
+            // Changes the value of the button
+            btn.className = 'approved';
+            // Changes the text on the button
+            btn.innerText = 'Zatwierdzono!';
+            let btn_id = btn.id
+            {##}
+            {#btn.localStorage.setItem("btn-approved", btn_id);#}
+        }
+    }
+
+</script>
+
+{% endblock %}

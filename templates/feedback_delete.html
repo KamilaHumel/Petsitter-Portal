@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="feedback-title">
+        <h2>{{ msg }}</h2>
+    </div>
+
+    <div class="feedback-container">
+        {% for comment in comments %}
+            <div class="comment-container">
+                <div class="comment-petsitter">
+                    <h4>Opiekun: {{ comment.pet_sitter }}</h4>
+                     <div class="comment-rating">
+                    {% if comment.rating == 5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    {% elif comment.rating == 4 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                    {% elif comment.rating == 3 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    {% elif comment.rating == 2 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    {% else %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    {%endif%}
+
+                </div>
+                </div>
+
+                <div class="comment-text">
+                    <h4>{{ comment.opinion }}</h4>
+                </div>
+                <div class="button-delete">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-delete" id={{ comment.id }} name="btn-delete"
+                                            value={{ comment.id }} onclick=changeValue();><span>Usuń</span></button>
+                    </form>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

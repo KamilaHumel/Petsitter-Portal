@@ -1,0 +1,15 @@
+<div class="topnav">
+    <div class="nav-left">
+        {% load static %}
+        <a href="{% url 'index' %}"><img class='LOGO' src="{% static "img/LOGO.png" %}" alt="LOGO"></a>
+
+    </div>
+    <div class="nav-right">
+
+        <a href="{% url 'petsit-view' %}">Twój Profil</a>
+        <a href="{% url 'services-all' %}">Twoje Usługi</a>
+        <a href="{% url 'logout' %}">Wyloguj</a>
+        <a class="active" href="{% url 'index' %}">Znajdź Petsittera</a>
+    </div>
+
+</div>

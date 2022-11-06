@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+{#    <script src="{% static 'app.js' %}" type="text/javascript" defer></script>#}
+    <title>Petsitter</title>
+</head>
+
+<body>
+
+{% include 'nav_bar_login.html' %}
+
+
+<div style="padding:16px">
+
+{#    {% if user.is_authenticated %}#}
+{#        <p>Witaj {{ user.username }}</p>#}
+{#        <p><a href="{% url 'logout' %}">Wyloguj</a></p>#}
+{#        {% else %}#}
+{#        <p> {{ msg }}</p>#}
+{#    {% endif %}#}
+
+    {% block content %}
+          <h2>Czołem Petsitterzy!</h2>
+          <div class="cat">
+            <form action="user-info/">
+                <input type="submit" value="KOT" />
+            </form>
+          </div>
+          <div class="dog">
+            <form action="user-info/">
+                <input type="submit" value="PIES" />
+            </form>
+          </div>
+    {% endblock %}
+</div>
+
+</body>
+</html>

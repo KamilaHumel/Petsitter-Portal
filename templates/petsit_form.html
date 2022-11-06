@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="search-container">
+        <div class="search-img">
+
+        </div>
+        <div class="search-form">
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="search-animal">
+                  {% load static %}
+                  <div class="flex-animal">
+                    <label><input type="checkbox" name="animal" value="PIES" class="input-pies"/><img class='icon' src="{% static 'img/dog-icon.png' %}" alt="DOG"></label>
+                    <label><input type="checkbox" name="animal" value="KOT" class="input-kot"/><img class='icon' src="{% static 'img/cat-icon.png' %}" alt="CAT"></label>
+                    <label><input type="checkbox" name="animal" value="KRÓLIK" class="input-krolik"/><img class='icon' src="{% static 'img/rabbit-icon.png' %}" alt="RABBIT"></label>
+                    <label><input type="checkbox" name="animal" value="FRETKA" class="input-fretka"/><img class='icon' src="{% static 'img/ferret-icon.png' %}" alt="FERRET"></label>
+                    <label><input type="checkbox" name="animal" value="CHOMIK" class="input-chomik"/><img class='icon' src="{% static 'img/hamster-icon.png' %}" alt="HAMSTER"></label>
+                  </div>
+
+                  <div>
+                    {{ form.as_p }}
+                  </div>
+
+              </div>
+              <div class="search-button">
+                  <button type="submit"><span>Znajdź petsittera!</span></button>
+              </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function checked() {
+            let button = localStorage.getItem("button");
+            if (button === 'KOT') {
+                const in_cat = document.querySelector('.input-kot')
+                in_cat.checked = true}
+            else if(button === 'PIES') {
+                const in_dog = document.querySelector('.input-pies')
+                in_dog.checked = true
+                }
+            else if(button === 'CHOMIK') {
+                const in_hamster = document.querySelector('.input-chomik')
+                in_hamster.checked = true
+                }
+            else if(button === 'KRÓLIK') {
+                const in_rabbit = document.querySelector('.input-krolik')
+                in_rabbit.checked = true
+                }
+            else {
+                const in_ferret = document.querySelector('.input-fretka')
+                in_ferret.checked = true
+            }
+
+
+            const animal_size_0 = document.querySelector('#id_size_0');
+            const animal_size_1 = document.querySelector('#id_size_1');
+            const animal_size_2 = document.querySelector('#id_size_2');
+            const animal_size_3 = document.querySelector('#id_size_3');
+            const animal_size_4 = document.querySelector('#id_size_4');
+
+            animal_size_0.addEventListener("change", function () {
+                let size = animal_size_0.value
+                localStorage.setItem("size", size);
+                console.log(size)
+            });
+
+            animal_size_0.addEventListener("change", function () {
+                let size = animal_size_0.value
+                localStorage.setItem("size", size);
+                console.log(size)
+            });
+
+            animal_size_1.addEventListener("change", function () {
+                let size = animal_size_1.value
+                localStorage.setItem("size", size);
+                console.log(size)
+            });
+
+            animal_size_2.addEventListener("change", function () {
+                let size = animal_size_2.value
+                localStorage.setItem("size", size);
+                console.log(size)
+            });
+
+            animal_size_3.addEventListener("change", function () {
+                let size = animal_size_3.value
+                localStorage.setItem("size", size);
+                console.log(size)
+            });
+
+            animal_size_4.addEventListener("change", function () {
+                let size = animal_size_4.value
+                localStorage.setItem("size", size);
+                console.log(size)
+            });
+
+
+        }
+
+        checked();
+    </script>
+{% endblock %}

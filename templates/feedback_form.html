@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="fb-container">
+        <div class="feedback-img">
+
+        </div>
+        <div class="feedback-form-container">
+            <div class="feedback-form">
+                <form action="" method="post">
+                  {% csrf_token %}
+                  <div>
+                      <input type="text" name="pet-sit" value="user" id='comment' class="input-user"/>
+                    {{ form.as_p }}
+                  </div>
+                  <div class="fb-button">
+                    <button type="submit"><span>Oceń</span></button>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function checked() {
+            let petsit = localStorage.getItem("pet-feedback");
+            const input_user = document.querySelector('.input-user')
+            input_user.value = petsit
+
+        }
+        checked();
+    </script>
+{% endblock %}

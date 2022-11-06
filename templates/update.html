@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="update-container">
+    <div class="update-img">
+
+    </div>
+    <div class="update-form-container">
+        <div class="update-form">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="update-info">
+                    <h5>Imię: </h5> <input class="left" type="text" name="first_name" value="{{ person.user.first_name }}">
+                    <h5>Nazwisko: </h5> <input class="right" type="text" name="last_name" value="{{ person.user.last_name }}">
+                    <h5>Miasto: </h5> <input class="left" type="text" name="city" value="{{ person.city }}">
+                    <h5>Adres: </h5> <input class="right" type="text" name="address" value="{{ person.address }}">
+                </div>
+                <div class="update-about">
+                    <h5>O Tobie: </h5><textarea name="about" >{{ person.about }}</textarea>
+                </div>
+                <div class="animal">
+                    <h5>Zwierzęta: </h5>
+                    <label><input type="checkbox" name="animal" value="PIES" class="input-pies"
+                                    {% if 'PIES' in animals %}
+                                        checked
+                                    {% endif %}>PIES</label>
+                    <label><input type="checkbox" name="animal" value="KOT" class="input-kot"
+                                    {% if 'KOT' in animals %}
+                                        checked
+                                    {% endif %}>KOT</label>
+                    <label><input type="checkbox" name="animal" value="CHOMIK" class="input-chomik"
+                                    {% if 'CHOMIK' in animals %}
+                                        checked
+                                    {% endif %}>CHOMIK</label>
+                    <label><input type="checkbox" name="animal" value="KRÓLIK" class="input-krolik"
+                                    {% if 'KRÓLIK' in animals %}
+                                        checked
+                                    {% endif %}>KRÓLIK</label>
+                    <label><input type="checkbox" name="animal" value="FRETKA" class="input-fretka"
+                                    {% if 'FRETKA' in animals %}
+                                        checked
+                                    {% endif %}>FRETKA</label>
+                </div>
+                <div class="size">
+                    <h5>Wielkość: </h5>
+                    <label><input type="checkbox" name="size" value="BARDZO MAŁY - do 2 kg" class="size-bmaly"
+                                    {% if 'BARDZO MAŁY - do 2 kg' in size %}
+                                        checked
+                                    {% endif %}>BARDZO MAŁY - do 2 kg</label>
+                    <label><input type="checkbox" name="size" value="MAŁY - 2-5 kg" class="size-maly"
+                                    {% if 'MAŁY - 2-5 kg' in size %}
+                                        checked
+                                    {% endif %}>MAŁY - 2-5 kg</label>
+                    <label><input type="checkbox" name="size" value="ŚREDNI - 5-12 kg" class="size-sredni"
+                                    {% if 'ŚREDNI - 5-12 kg' in size %}
+                                        checked
+                                    {% endif %}>ŚREDNI - 5-12 kg</label>
+                    <label><input type="checkbox" name="size" value="DUŻY - 12-20 kg" class="size-duzy"
+                                    {% if 'DUŻY - 12-20 kg' in size %}
+                                        checked
+                                    {% endif %}>DUŻY - 12-20 kg</label>
+                    <label><input type="checkbox" name="size" value="BARDZO DUŻY - powyżej 20 kg" class="size-bduzy"
+                                    {% if 'BARDZO DUŻY - powyżej 20 kg' in size %}
+                                        checked
+                                    {% endif %}>BARDZO DUŻY - powyżej 20 kg</label>
+                </div>
+                <div class="update-button">
+                    <button type="submit"><span>Zaktualizuj</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

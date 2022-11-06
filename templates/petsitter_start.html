@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="start-container">
+
+{#        <div class="text-start">#}
+{#            <h2>Znajdź Petsittera dla swojego pupila!</h2>#}
+{#        </div>#}
+
+        <div class="pets">
+            {% load static %}
+            <div class="dog-start pet-button">
+                <a href="{% url 'pet_form' %}" class="pies">
+                <button><img src="{% static 'img/dog-start.png' %}" alt="dog"></button></a>
+            </div>
+
+            <div class="cat-start pet-button">
+                <a href="{% url 'pet_form' %}" class="kot">
+                <button><img src="{% static 'img/cat-start.png' %}" alt="cat"></button></a>
+            </div>
+
+            <div class="rabbit-start pet-button">
+                <a href="{% url 'pet_form' %}" class="rabbit">
+                <button><img src="{% static 'img/rabbit-start.png' %}" alt="rabbit"></button></a>
+            </div>
+
+            <div class="ferret-start pet-button">
+                <a href="{% url 'pet_form' %}" class="ferret">
+                <button><img src="{% static 'img/ferret-start.png' %}" alt="ferret"></button></a>
+            </div>
+
+            <div class="hamster-start pet-button">
+                <a href="{% url 'pet_form' %}" class="hamster">
+                <button><img src="{% static 'img/hamster-start.png' %}" alt="hamster"></button></a>
+            </div>
+        </div>
+
+        <div class="choose-animal">
+            <h3>Kto potrzebuje opieki?</h3>
+        </div>
+
+    </div>
+
+
+    <script>
+        const btn_cat = document.querySelector('.kot');
+        const btn_dog = document.querySelector('.pies');
+        const btn_hamster = document.querySelector('.hamster');
+        const btn_rabbit = document.querySelector('.rabbit');
+        const btn_ferret = document.querySelector('.ferret');
+
+        btn_cat.addEventListener("click", function () {
+            localStorage.setItem("button", "KOT");
+            window.location.href = "pet_form";
+        })
+
+        btn_dog.addEventListener("click", function () {
+            localStorage.setItem("button", "PIES");
+            window.location.href = "pet_form";
+        })
+
+        btn_hamster.addEventListener("click", function () {
+            localStorage.setItem("button", "CHOMIK");
+            window.location.href = "pet_form";
+        })
+
+        btn_rabbit.addEventListener("click", function () {
+            localStorage.setItem("button", "KRÓLIK");
+            window.location.href = "pet_form";
+        })
+
+        btn_ferret.addEventListener("click", function () {
+            localStorage.setItem("button", "FRETKA");
+            window.location.href = "pet_form";
+        })
+    </script>
+{% endblock %}

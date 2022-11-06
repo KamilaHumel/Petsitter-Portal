@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+    <div class="petsitviewcontainer">
+        <div class="left-bar">
+            <div class="nav-info">
+                <a href="{% url 'update' id=user.id %}">Zmień informacje o sobie</a>
+                <a href="{% url 'feedback-delete' %}">Twoje komentarze</a>
+            </div>
+
+        </div>
+
+        <div class="middle-bar">
+            <div class="profile-top">
+                {% load static %}
+                <h2>Imię i nazwisko: {{ petsitter.user.first_name }} {{ petsitter.user.last_name }}</h2>
+                <div><img class='person-logo' src="{% static "img/person-logo.png" %}" alt="personal logo"></div>
+            </div>
+            <div class="log-title">
+                <h3>Podstawowe informacje:</h3>
+            </div>
+            <div class="profile-about">
+                <h4><strong>Adres:</strong> {{ petsitter.address }}, {{ petsitter.city }}</h4>
+                <h4><strong>Rodzaj lokalu:</strong> {{ petsitter.get_place_type_display }}</h4>
+                <h4><strong>Jakimi zwierzętami się opiekuję:</strong> {{ animals }}</h4>
+                <h4><strong>Czy oferuję dojazd:</strong>
+
+                    {% if petsitter.transport == True %}
+                            TAK
+                    {% else %} NIE
+                    {% endif %}</h4>
+            <div class="log-title">
+                <h3>O mnie: <br></h3>
+            </div>
+                <h4><i>{{ petsitter.about }}</i></h4>
+            </div>
+        </div>
+
+        <div class="right-bar">
+            <div class="profile-feedback">
+                {% for f in feedback %}
+                    <div class="person-feedback">
+
+                        <div class="person-rating">
+                            {% if f.rating == 5 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            {% elif f.rating == 4 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                            {% elif f.rating == 3 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                            {% elif f.rating == 2 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                            {% else %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                            {% endif %}
+                        </div>
+                        <div class="person-opinion">
+                            <h4>{{ f.opinion }}</h4>
+                        </div>
+                        <div class="person-name">
+                            <h5>{{ f.owner }}</h5>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

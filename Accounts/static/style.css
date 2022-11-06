@@ -1,0 +1,927 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+img.LOGO {
+    width: auto;
+    height: 48px;
+    padding: 5px;
+}
+
+.topnav .nav-right a {
+    float: left;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 5px;
+}
+
+/*.topnav a:hover {*/
+/*    background-color: #ddd;*/
+/*    color: black;*/
+/*}*/
+
+.topnav a.active {
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    color: white;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 15px;
+}
+
+.topnav a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*REGISTRATION*/
+
+.helptext {
+    display: none;
+}
+
+.registration-container {
+    width: 400px;
+    height: auto;
+    margin: 30px;
+    padding: 20px 0px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+    box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+}
+
+.registration-container form {
+    width: 80%;
+}
+
+.registration input {
+    width: 69%;
+}
+
+.registration input#id_email{
+    width: 63%;
+}
+
+.button-start {
+    display: flex;
+    justify-content: right;
+}
+.registration button:hover {
+    background-color: #238277;
+    color: white;
+}
+
+/*LOGIN*/
+
+.container#login, .container#registration{
+    display: block;
+    background-image: url("img/pies-gory.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 680px;
+    padding-left: 650px;
+    padding-top: 50px;
+    margin-left: 0px;
+}
+
+.login-container {
+    width: 350px;
+    height: 200px;
+    margin-top: 50px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+    box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+}
+
+.login-button {
+    padding: 5px 20px;
+}
+
+#id_username #id_password {
+    width: 100px;
+    height: 50px;
+}
+
+
+/*START VIEW*/
+
+.start-container {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+}
+
+.pet-button {
+    grid-row: 1/2;
+}
+
+.pets {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display:flex;
+    justify-content: space-around;
+    height: 25em;
+}
+
+.pet-button button {
+    border: none;
+    margin: 5px;
+    padding: 0px;
+    background: white;
+}
+
+.pet-button button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.pet-button img {
+    height: 350px;
+    width: auto;
+}
+
+.choose-animal {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-image: linear-gradient( to right, #f34079, white 30%, white 70%, #fa7b55 );
+    background-repeat: no-repeat;
+    background-size: 100% 25px;
+    background-position: 0 center;
+}
+
+.choose-animal h3 {
+    text-align: center;
+    font-size: 50px;
+    color: #ba1a4d;
+    font-weight: 300;
+}
+
+
+
+/* RESULT VIEW */
+
+
+.result-container {
+    display: flex;
+    margin-right: 80px;
+    margin-left: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.result-title {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-image: linear-gradient( to right, #f34079, white 35%, white 65%, #fa7b55 );
+    background-repeat: no-repeat;
+    background-size: 100% 6px;
+    background-position: 0 center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.result-title h2 {
+    text-align: center;
+    font-size: x-large;
+    color: #333333;
+}
+
+.person-result {
+    margin: 10px;
+    padding: 15px;
+    background: #f4f4f4;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.person-name {
+    display: flex;
+}
+
+.person-name h2 {
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.person-about h4 {
+    font-style: italic;
+    font-weight: 200;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.person-buttons a {
+    text-decoration: none;
+}
+
+.person-buttons {
+    margin-top: 10px;
+    display: flex;
+}
+
+.person-buttons a:hover {
+    text-decoration: none;
+}
+
+.person-buttons button {
+    align-items: center;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    border: 0;
+    border-radius: 7px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    font-weight: 700;
+    height: 25px;
+    justify-content: center;
+    letter-spacing: .5px;
+    line-height: 1;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+.person-buttons button span {
+    transition: all 200ms;
+}
+
+.person-buttons button:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+
+
+/*SEARCH PETSITTER VIEW*/
+
+.search-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+    grid-template-rows: 0.2fr 4fr 1fr;
+
+}
+
+.search-img {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-image: url("img/dog-view.jpg");
+    background-size: cover;
+    background-position: bottom;
+    width: auto;
+    margin-right: 20px;
+}
+
+.search-form {
+    /*grid-column: 2/3;*/
+    width: 80%;
+    height: auto;
+    background-color: #f5f5f5;
+    padding: 30px;
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+}
+
+.flex-animal {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.search-animal img.icon {
+    width: 40px;
+    height: auto;
+}
+
+.search-animal p {
+    margin-bottom: 5px;
+}
+
+
+.search-button button {
+    align-items: center;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    border: 0;
+    border-radius: 7px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 700;
+    height: 25px;
+    justify-content: center;
+    letter-spacing: .4px;
+    line-height: 1;
+    max-width: 100%;
+    padding: 20px;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.search-button button span {
+    transition: all 200ms;
+}
+
+.search-button button:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+
+.search-button form {
+    margin-bottom: 5px;
+}
+
+#id_city, #id_address {
+    width: 75%;
+}
+
+#id_place_type {
+    width: 50%;
+}
+
+#id_size_0, #id_size_1, #id_size_2, #id_size_3, #id_size_4 {
+    margin-bottom: 5px;
+}
+
+
+/* PETSITTER VIEW -- FORM */
+
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    /*grid-template-rows: 1fr 1fr 3fr 1fr 1fr;*/
+    height: 580px;
+    padding-top: 50px;
+}
+
+
+.info-photo {
+    background-image: url("img/jamie-street-SrgELjlFlY0-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    grid-column:2/3;
+    margin-right: 15px;
+
+}
+
+.info-form {
+    /*width: 55%;*/
+    height: auto;
+    background-color: #f5f5f5;
+    padding: 30px;
+    /*grid-row: 3 / 4;*/
+    grid-column: 3 / 4;
+    -webkit-box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+    box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+}
+
+.petsit-info input#id_city {
+    width: 64%;
+}
+
+.login-button {
+    padding: 5px 20px;
+}
+
+
+/*PETSITTER VIEW -- PROFILE */
+
+.petsitviewcontainer {
+    display: grid;
+    grid-template-columns: 3fr 9fr 4fr;
+}
+
+.petsitviewcontainer .left-bar {
+    padding-top: 40px;
+    background-color: #fb825236;;
+}
+
+.petsitviewcontainer .middle-bar {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.petsitviewcontainer .nav-info a {
+    display:block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    width: 85%;
+    border: 1px solid white;
+    color: white;
+    padding: 7px 15px;
+    text-decoration: none;
+    background-color: #dd4970;
+}
+
+.profile-top {
+    display: flex;
+}
+
+img.person-logo {
+    height: 100px;
+    z-index: 2;
+    position: absolute;
+    margin-left: 70px;
+}
+
+.log-title h3 {
+    border-bottom: 1px solid black;
+    margin-right: 400px;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 17px;
+}
+
+.profile-about h4 {
+    font-weight: 250;
+    margin: 8px;
+    font-size: 19px;
+}
+
+.person-feedback{
+    display: grid;
+    grid-template-rows: 20px 1fr 30px;
+    padding: 10px;
+}
+.person-feedback .person-rating {
+ grid-row: 1/2;
+}
+.person-feedback .person-opinion {
+ grid-row: 2/3;
+}
+.person-feedback .person-name {
+ grid-row: 3/4;
+}
+
+.person-feedback .person-name h5 {
+    margin: 5px;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.person-feedback .person-opinion h4 {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+
+.profile-feedback .person-feedback:nth-child(even) {
+    background-color: #f3f3f3;
+    margin-bottom: 10px;
+}
+
+.profile-feedback .person-feedback:nth-child(odd) {
+    background-color: #eae9e9;
+    margin-bottom: 10px;
+}
+
+.checked {
+  color: orange;
+}
+
+
+
+/* UPDATE INFO, ADD FEEDBACK, SERVICES FORM */
+
+.update-container, .fb-container, .serv-container {
+    display: grid;
+    margin-top:30px;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.update-form-container, .feedback-form-container, .service-form-container{
+    grid-column: 2/3;
+}
+
+.update-form, .feedback-form, .service-form {
+    width: 100%;
+    height: auto;
+    background-color: #f5f5f5;
+    padding: 30px;
+    grid-row: 3 / 4;
+    grid-column: 3 / 5;
+    box-shadow: 11px 10px 15px -17px rgba(66, 68, 90, 1);
+}
+
+.update-info h5 {
+    margin-bottom: 2px;
+    margin-top: 6px;
+}
+
+.update-form form {
+    display:grid;
+    grid-template-columns: 1.1fr 1.6fr;
+    grid-template-rows: 2fr 1.5fr 0.3fr;
+}
+
+.update-form .update-info input.left{
+    grid-column: 1 / 2;
+    grid-row: 1/2;
+}
+
+.update-form .update-info input.right{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.update-about {
+    grid-column: 2/3;
+    margin-left: 20px;
+    grid-row: 1/2;
+}
+
+.update-about h5 {
+    margin-bottom: 2px;
+    margin-top: 6px;
+}
+
+.update-about textarea {
+    height: 84%;
+    width: 100%;
+
+}
+
+.update-form .animal {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.animal h5{
+margin-top: 20px;
+margin-bottom: 3px;
+}
+
+.update-form .animal label, .update-form .size label{
+    display: block;
+    margin-bottom: 5px;
+}
+.update-form .animal label input, .update-form .size label input {
+    margin-right: 5px;
+}
+
+.update-form .size {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-left: 20px;
+}
+
+.size h5 {
+margin-top: 20px;
+margin-bottom: 3px;
+}
+
+.update-button, .fb-button, .sv-btn {
+    grid-column: 1/3;
+    grid-row:3/4;
+}
+
+
+.update-button button, .fb-button button, .sv-btn button {
+    align-items: center;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    border: 0;
+    border-radius: 7px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 700;
+    height: 25px;
+    justify-content: center;
+    letter-spacing: .4px;
+    line-height: 1;
+    max-width: 100%;
+    padding: 20px;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+*:focus {
+    outline: none!important;
+}
+
+
+.update-button button span , .fb-button button span, .sv-btn button span{
+    transition: all 200ms;
+}
+
+.update-button button:hover span, .fb-button:hover button,  .sv-btn button:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+
+.update-button form {
+    margin-bottom: 5px;
+}
+
+.update-img, .feedback-img, .serv-img {
+    background-image: url("img/golden.jpg");
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    grid-column:3/4;
+    grid-row: 1/2;
+    margin-left: 15px;
+}
+
+.service-form p {
+    margin-bottom: 5px;
+}
+
+.service-form textarea {
+    margin-top: 15px;
+}
+
+#comment, #serv-hidden-1, #serv-hidden-2, #serv-hidden-3 {
+    display: none;
+}
+
+
+
+/* COMMENTS - DELETE VIEW */
+
+.feedback-container {
+    display: flex;
+    margin-right: 80px;
+    margin-left: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feedback-title {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-image: linear-gradient( to right, #f34079, white 35%, white 65%, #fa7b55 );
+    background-repeat: no-repeat;
+    background-size: 100% 6px;
+    background-position: 0 center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.feedback-title h2 {
+    text-align: center;
+    font-size: x-large;
+    color: #333333;
+}
+
+.comment-container {
+    margin: 10px;
+    padding: 10px;
+    background: #dfe7e6;
+    max-width: 50%;
+    min-width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.comment-petsitter h4 {
+    margin: 5px;
+    font-size: 20px;
+}
+
+.comment-rating {
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.comment-text h4 {
+    font-style: italic;
+    font-weight: 200;
+    font-size: 17px;
+    margin: 5px;
+}
+
+.button-delete {
+    margin-top: 10px;
+}
+
+.button-delete button {
+    align-items: center;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    border: 0;
+    border-radius: 7px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 700;
+    height: 25px;
+    justify-content: center;
+    letter-spacing: .4px;
+    line-height: 1;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    text-transform: uppercase;
+}
+
+.button-delete button span {
+    transition: all 200ms;
+}
+
+.button-delete button:hover span {
+    transform: scale(.9);
+    opacity: .75;
+}
+
+.button-delete form {
+    margin-bottom: 5px;
+}
+
+/*SERVICES*/
+
+.services-container {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    padding: 20px;
+}
+
+.services-title-ordered, .services-title-done {
+    grid-column: 1/2;
+}
+
+.services-title-ordered h3, .services-title-done h3 {
+    border-bottom: 3px solid #238277;
+    margin-right: 50px;
+    font-size: 23px;
+}
+
+.services-result {
+    grid-column: 2/3;
+    padding: 15px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin-bottom: 20px;
+}
+
+.services-result h4 {
+    font-size: 19px;
+}
+
+.service-date {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-color: #238277;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-person {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1.5px solid #ffffff;
+}
+
+
+.service-animal {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.service-details {
+    grid-column: 2/3;
+    grid-row: 2/5;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style: italic;
+    background-color: rgba(255, 255, 255, 1);
+    background-image: linear-gradient(165deg, rgba(255, 255, 255, 1) 0%, rgb(231, 230, 230) 100%);
+}
+
+.button-approved {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    -webkit-transition: border-radius 0.3s ease-in-out;
+    -moz-transition: border-radius 0.3s ease-in-out;
+    -ms-transition: border-radius 0.3s ease-in-out;
+    -o-transition: border-radius 0.3s ease-in-out;
+    transition: border-radius 0.3s ease-in-out;
+}
+
+.button-approved .btn-approved {
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    height: 48px;
+    overflow: hidden;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: relative;
+    transition: box-shadow .15s,transform .15s;
+    font-size: 15px;
+}
+
+.btn-approved:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.btn-approved:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn-approved:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.service-person h4 {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-weight: 250;
+}
+
+.service-animal h4 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 250;
+}
+
+.service-details h5 {
+    font-weight: 100;
+    margin-top: 15px;
+}
+
+.services-title {
+    grid-column: 1/2;
+    align-items: center;
+}
+#approved {
+    background-color: #e0e0e0;
+}
+
+#not-approved {
+    background-color: #e5bdaf;
+}
+
+#not-approved .service-date{
+    background-color: #bb7861;
+}
+
+

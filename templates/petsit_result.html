@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="result-title">
+        <h2>PETSITERZY</h2>
+    </div>
+
+    <div class="result-container">
+    {% for person in result %}
+        <div class="person-result">
+            <div class="person-name">
+                <h2>{{ person.user.first_name }} {{ person.user.last_name }}</h2>
+
+                <div class="person-rating">
+
+                    {% if rating >= 4.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    {% elif rating >= 3.5 and rating < 4.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                    {% elif rating >= 2.5 and rating < 3.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    {% elif rating >= 1.5 and rating < 2.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    {% elif rating > 0 and rating < 1.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                    {% else %}
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+
+                    {% endif %}
+
+                </div>
+            </div>
+            <div class="person-about">
+                <h4>{{ person.about }}</h4>
+            </div>
+            <div class="person-buttons">
+                 <a href="{% url 'services-form' %}">
+                     <button class="services-request" id="{{ person.user.username }}"><span>Poproś o opiekę</span> </button>
+                 </a>
+            </div>
+
+        </div>
+
+{#<!--{% empty %}-->#}
+<!--        <div class="empty-result">-->
+<!--            <h2>Brak dostępnych Petsitterów</h2>-->
+<!--        </div>-->
+    {% endfor %}
+    </div>
+
+
+    <script>
+        const btn = document.querySelectorAll('.services-request');
+        const btn_f = document.querySelectorAll('.feedback');
+
+        console.log(btn)
+
+        for (let b of btn) {
+            b.addEventListener("click", function () {
+                let pet_sitter = b.id
+                console.log(pet_sitter)
+                localStorage.setItem("petsitter", pet_sitter);
+                window.location.href = "services-form";
+            })
+        }
+
+        for (let f of btn_f) {
+            f.addEventListener("click", function () {
+                let pet_feedback = f.id
+                console.log(pet_feedback)
+                localStorage.setItem("pet-feedback", pet_feedback);
+                window.location.href = "services-form";
+            })
+        }
+
+    </script>
+
+
+{% endblock %}

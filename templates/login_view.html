@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <div class="petsitviewcontainer">
+        <div class="left-bar">
+            <div class="nav-info">
+                <a href="{% url 'petsit-form' %}">Dodaj niezbędne informacje</a>
+            </div>
+            <div class="nav-info">
+                <a href="{% url 'petsit-extraform' %}">Dodatkowe informacje o Tobie</a>
+            </div>
+
+        </div>
+
+        <div class="right-bar">
+            <div class="profile-top">
+                <h2>Imię i nazwisko: {{ petsitter.name }}</h2>
+            </div>
+            <div class="profile-about">
+                <h3>Adres: {{ petsitter.address }}, {{ petsitter.city }}</h3>
+                <h3>Rodzaj mieszkania: {{ petsitter.place_type }}</h3>
+                <h3>Czy posiadam własne zwierzęta: {{ petsitter.animal }}</h3>
+                <h3>Czy oferuję dojazd: {{ petsitter.transport }}</h3>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

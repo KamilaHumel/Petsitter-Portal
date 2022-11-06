@@ -1,0 +1,12 @@
+<div class="topnav">
+    <div class="nav-left">
+        {% load static %}
+        <a href="{% url 'index' %}"><img class='LOGO' src="{% static "img/LOGO.png" %}" alt="LOGO"></a>
+    </div>
+    <div class="nav-right">
+        <a  href="{% url 'index' %}">Home</a>
+        <a href="{% url 'registration' %}">Zarejestruj się</a>
+        <a class="active" href="{% url 'login' %}">Zaloguj się</a>
+    </div>
+
+</div>

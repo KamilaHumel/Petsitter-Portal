@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="info-container">
+        <div class="info-photo">
+        </div>
+        <div class="info-form">
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="petsit-info">
+                    {{ form.as_p }}
+                  <div>
+                    <button class="login-button" type="submit">Dodaj</button>
+                  </div>
+              </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

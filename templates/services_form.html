@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block extrahead %}
+{{ form.media }}
+{% endblock %}
+
+
+{% block content %}
+ <div class="serv-container">
+    <div class="serv-img">
+
+    </div>
+    <div class="service-form-container">
+        <div class="service-form">
+            <form action="" method="post">
+              {% csrf_token %}
+              <div>
+                  <input type="text" name="pet-sit" value="user" class="input-user" id="serv-hidden-1"/>
+                  <input type="text" name="pet-type" value="pet-type" class="pet-type" id="serv-hidden-2"/>
+                  <input type="text" name="pet-size" value="pet-size" class="pet-size" id="serv-hidden-3"/>
+
+                {{ form.as_p }}
+              </div>
+              <div class="sv-btn">
+                <button type="submit"><span>Wyślij</span></button>
+              </div>
+            </form>
+        </div>
+    </div>
+ </div>
+
+
+
+    <script>
+        function checked() {
+            let petsit = localStorage.getItem("petsitter");
+            const input_user = document.querySelector('.input-user')
+            input_user.value = petsit
+
+            let btn = localStorage.getItem("button");
+            const pet_type = document.querySelector('.pet-type')
+            pet_type.value = btn
+
+            let size = localStorage.getItem("size");
+            const pet_size = document.querySelector('.pet-size')
+            pet_size.value = size
+        }
+        checked();
+    </script>
+{% endblock %}
