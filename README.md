@@ -1,10 +1,10 @@
 # Petsitter-Portal
-Find a friendly sitter for your pet!
+Find a friendly sitter for your pet!😻
 
 # About
-Have you ever been in a situation when you wanted to have a trip but you had no one to leave your pet with? <br>
+Have you ever been in a situation when you wanted to have a trip but you had no one to leave your pet with?🥺 <br>
 This is the end of your worries!<br>
-Petsitter portal is a place where you can find a friendly sitter for your pets - dogs, cats, rabbits, hamsters and ferrets. You need just to register, add description and start searching for petsitter. Portal allows you to accept petsitting requests, add reviews and rates.<br>
+Petsitter portal is a place where you can find a friendly sitter for your pets - dogs🐶, cats🐱, rabbits🐰, hamsters🐹 and ferrets.<br> You need just to register, add description and start searching for petsitter. Portal allows you to accept petsitting requests, add reviews and rates ⭐️⭐️⭐️⭐️⭐️.<br>
 Project is web-based app with 12 views and user-friendly GUI. 
 
 # Technologies
