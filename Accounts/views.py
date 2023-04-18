@@ -14,7 +14,7 @@ class RegistrationUser(SuccessMessageMixin, View):
     def post(self, request):
         form = UserCreateForm(request.POST)
 
-        if form.is_valid():  # is valid sprawdza czy dobrze sa uzupelnione wartosci i wrzuca je do pojemnika "cleaned data"
+        if form.is_valid():
             password = form.cleaned_data['password1']
             un = form.cleaned_data['username']
             first_name = form.cleaned_data['first_name']
@@ -47,7 +47,7 @@ class LoginView(View):
 
             if user is not None:
                 url = request.GET.get('next',
-                                      "index")  # pobiera info z GET - GET jest słownikiem i ma w sobie element 'next' - wtedy gdy niezalogowany uzytkownik chce sie dostac na strone która wymaga logowania. Jeśli tak jest i sie zaloguje to zostanie przekierowany na strone na którą chciał wejść (dzięki 'next'). Jeśli Tylko kilknąl Login to zostanie zalogowany i nadal będzie na stronie głównej '/'.
+                                      "index")
                 login(request, user)
         return redirect(url)
 
