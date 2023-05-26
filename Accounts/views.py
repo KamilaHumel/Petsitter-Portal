@@ -21,6 +21,7 @@ class RegistrationUser(SuccessMessageMixin, View):
             first_name = form.cleaned_data["first_name"]
             last_name = form.cleaned_data["last_name"]
             email = form.cleaned_data["email"]
+
             u = User()
             u.username = un
             u.first_name = first_name
