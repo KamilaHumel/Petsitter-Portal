@@ -2,8 +2,9 @@
 
 {% block content %}
 
-<h2>{{ msg }}</h2>
-
+<div class="feedback-title">
+    <h2>{{ msg }}</h2>
+</div>
 
 <div class="services-container">
     <div class="services-title-done">
@@ -76,7 +77,7 @@
             {% if result.is_approved == True %}
                 <div class="person-buttons">
                     <a href="{% url 'feedback-form' %}">
-                        <button class="feedback" id="{{ result.pet_sitter }}"><span>Oceń</span></button>
+                        <button class="feedback" id="{{ result.pet_sitter }}" onClick=SavePetsitter()><span>Oceń</span></button>
                     </a>
                 </div>
             {% endif %}
@@ -87,20 +88,24 @@
 
 <script>
     btn_approved = document.querySelectorAll(".btn-approved")
-    console.log(btn_approved);
+    btn_feedback = document.querySelectorAll(".feedback")
+
+    for (btn of btn_feedback) {
+        function SavePetsitter() {
+            localStorage.setItem("petfeedback", btn.id);
+        }
+    };
+
 
     for (btn of btn_approved) {
         function changeValue() {
-            console.log('działa')
             // Changes the value of the button
             btn.className = 'approved';
             // Changes the text on the button
             btn.innerText = 'Zatwierdzono!';
             let btn_id = btn.id
-            {##}
-            {#btn.localStorage.setItem("btn-approved", btn_id);#}
-        }
-    }
+        };
+    };
 
 </script>
 
