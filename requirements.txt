@@ -1,0 +1,5 @@
+bootstrap4==0.1.0
+Django==4.2.1
+django-bootstrap-datepicker-plus==5.0.3
+django-extensions==3.2.1
+python-dotenv==1.0.0
