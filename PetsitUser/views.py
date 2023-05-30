@@ -31,10 +31,7 @@ class PetForm(LoginRequiredMixin, View):
 
         animal = ANIMAL_CHOICE[animal]
 
-        if transport == "on":
-            transport = True
-        else:
-            transport = False
+        transport = transport == "on"
 
         search_result = PetsitUser.objects.filter(
             city=city,
