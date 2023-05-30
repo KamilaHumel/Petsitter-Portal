@@ -36,7 +36,6 @@ class FeedbackDeleteView(View):
             return render(
                 request, "feedback_delete.html", {"comments": comments, "msg": msg}
             )
-
         else:
             msg = "Nie dodałeś jeszcze żadnych komentarzy"
             return render(request, "feedback_delete.html", {"msg": msg})

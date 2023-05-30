@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from django.views import View
 
-from Petsitter.settings import animal_choice
+from Petsitter.settings import ANIMAL_CHOICE
 from PetsitUser.models import Animal, AnimalSize
 
 from .forms import ServicesForm
@@ -21,7 +21,7 @@ class ServicesFormView(LoginRequiredMixin, View):
         pet_type = request.POST["pet-type"]
         pet_size = request.POST["pet-size"]
 
-        pet_type = animal_choice[pet_type]
+        pet_type = ANIMAL_CHOICE[pet_type]
 
         if form.is_valid():
             obj = form.save(commit=False)

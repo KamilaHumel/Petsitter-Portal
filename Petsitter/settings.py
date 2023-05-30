@@ -124,9 +124,9 @@ LOGIN_URL = "login"
 
 DATE_FORMAT = "d-m-Y"
 
-animal_choice = {"PIES": 1, "KRÓLIK": 2, "KOT": 3, "FRETKA": 4, "CHOMIK": 5}
+ANIMAL_CHOICE = {"PIES": 1, "KRÓLIK": 2, "KOT": 3, "FRETKA": 4, "CHOMIK": 5}
 
-size_choice = {
+SIZE_CHOICE = {
     "BARDZO MAŁY - do 2 kg": 1,
     "MAŁY - 2-5 kg": 2,
     "ŚREDNI - 5-12 kg": 3,

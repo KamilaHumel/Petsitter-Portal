@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from django.views import View
 
 from Feedback.models import Feedback
-from Petsitter.settings import animal_choice, size_choice
+from Petsitter.settings import ANIMAL_CHOICE, SIZE_CHOICE
 
 from .forms import PetsitForm, PetsitSearchForm
 from .helpers import count_rating
@@ -29,7 +29,7 @@ class PetForm(LoginRequiredMixin, View):
         transport = request.POST.get("transport")
         user = self.request.user.id
 
-        animal = animal_choice[animal]
+        animal = ANIMAL_CHOICE[animal]
 
         if transport == "on":
             transport = True
@@ -81,19 +81,19 @@ class PetsitLogView(LoginRequiredMixin, View):
             pet = PetsitUser.objects.get(user=user)
         except PetsitUser.DoesNotExist:
             return redirect("petsit-form")
-        else:
-            feedback = Feedback.objects.filter(pet_sitter=user)
-            all_animals = pet.animals.all()
-            animals = ""
 
-            for animal in all_animals:
-                animals += animal.name + " "
+        feedback = Feedback.objects.filter(pet_sitter=user)
+        all_animals = pet.animals.all()
+        animals = ""
 
-            return render(
-                request,
-                "petsit_logview.html",
-                {"petsitter": pet, "feedback": feedback, "animals": animals},
-            )
+        for animal in all_animals:
+            animals += animal.name + " "
+
+        return render(
+            request,
+            "petsit_logview.html",
+            {"petsitter": pet, "feedback": feedback, "animals": animals},
+        )
 
 
 class PetsitLogForm(LoginRequiredMixin, View):
@@ -149,17 +149,12 @@ class UpdateInfoView(View):
         size_list = []
 
         for animal in animals:
-            animal = animal_choice[animal]
+            animal = ANIMAL_CHOICE[animal]
             animal_list.append(animal)
 
         for size in sizes:
-            size = size_choice[size]
+            size = SIZE_CHOICE[size]
             size_list.append(size)
-
-        # if user.first_name != first_name:
-        #     user.first_name = first_name
-        #     user.save(update_fields=['first_name'])
-        # elif: ...
 
         user.first_name = first_name
         user.last_name = last_name
@@ -168,7 +163,7 @@ class UpdateInfoView(View):
         person.about = about
         person.animals.set(animal_list)
         person.size.set(size_list)
-        person.save()
-        user.save()
+        person.save(update_fields=["city", "address", "about", "animals", "size"])
+        user.save(update_fields=["first_name", "last_name"])
 
         return redirect("petsit-view")
