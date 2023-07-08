@@ -3,6 +3,7 @@
 .AppleDouble
 .LSOverride
 .idea
+.env
 
 # Icon must end with two \r
 Icon
@@ -82,5 +83,3 @@ pytest.ini
 
 # Sphinx documentation
 docs/_build/
-
-.env
