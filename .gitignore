@@ -83,4 +83,4 @@ pytest.ini
 # Sphinx documentation
 docs/_build/
 
-db_petsitter
+.env

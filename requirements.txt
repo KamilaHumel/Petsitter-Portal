@@ -1,5 +1,9 @@
 bootstrap4==0.1.0
 Django==4.2.1
+bootstrap4==0.1.0
 django-bootstrap-datepicker-plus==5.0.3
 django-extensions==3.2.1
 python-dotenv==1.0.0
+pydantic==1.10.8
+sqlparse==0.4.3
+psycopg2-binary==2.9.6
