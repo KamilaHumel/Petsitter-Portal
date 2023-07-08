@@ -160,7 +160,7 @@ class UpdateInfoView(View):
         person.about = about
         person.animals.set(animal_list)
         person.size.set(size_list)
-        person.save(update_fields=["city", "address", "about", "animals", "size"])
+        person.save(update_fields=["city", "address", "about"])
         user.save(update_fields=["first_name", "last_name"])
 
         return redirect("petsit-view")
