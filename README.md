@@ -43,7 +43,7 @@ Also, if you are a pet sitter you can fully manage your profile. You can change 
 ```python manage.py runserver```<br>
 
 <b>Navigate to:</b><br>
-```http://127.0.0.1:8000/```
+```http://127.0.0.1:8002/```
 
 ## Application view
 <img width="1438" alt="Zrzut ekranu 2022-11-6 o 19 12 59" src="https://github.com/KamilaHumel/Petsitter-Portal/assets/102860528/3194d285-bdbd-4cbe-a1a5-460342727fcd">
