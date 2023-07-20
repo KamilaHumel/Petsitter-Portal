@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "bootstrap4",
     "bootstrap_datepicker_plus",
     "django_extensions",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,9 @@ SIZE_CHOICE = {
     "DUŻY - 12-20 kg": 4,
     "BARDZO DUŻY - powyżej 20 kg": 5,
 }
+
+"""AWS SETTINGS"""
+AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+AWS_REGION_NAME = os.getenv("AWS_REGION_NAME")
+AWS_S3_CUSTOM_DOMAIN = f"{os.getenv('AWS_STORAGE_BUCKET_NAME')}.s3.amazonaws.com"
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
